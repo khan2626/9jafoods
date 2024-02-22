@@ -46,18 +46,7 @@
 	</header>
     <div class="container" style="max-width: 80%">
       <div id="intro">
-        {% for foods in igbo_foods %}
-            {% set name = igbo_foods['name'] %}
-            {% set image = igbo_foods['image'] %}
-            {% set desc = igbo_foods['description'] %}
-            <div>
-              <ul>
-                <li><h3>{{ name }}</h3></li>
-                <li><img src="{{ image }}" alt="{{ name }}" width="100"></li>
-                <li><p><a href="{{ desc }}" target="_blank">Learn More</a></p> </li>
-              </ul>
-            </div>
-        {% endfor %}
+        {{ recipe }}
         <p> 
           <h1>Let's Cook Yummy!</h1>
         </p>
