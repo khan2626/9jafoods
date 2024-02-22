@@ -45,6 +45,14 @@
     </nav>
 	</header>
     <div class="container" style="max-width: 80%">
+      <div>
+        {% for foods in igbo_foods %}
+          <p>{{ foods.name }}</p>
+          <img src="{{ foods.image }}">
+          <p id="description"><a href="{{ foods.description }}">Learn More about {{ foods.name }}</a></p>
+        {% endfor %}
+        <p> 
+      </div>
       
           <div id="connect">
             <h4>Connect with me</h4>
@@ -54,7 +62,7 @@
           </div>
           
     </div>
-  <footer class="py-3 my-4">
+  <footer class="py-3 my-4" style="position: relative; bottom: 0;">
     <ul class="nav justify-content-center border-bottom pb-3 mb-3">
       <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
       <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>

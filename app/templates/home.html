@@ -16,7 +16,7 @@
 		<nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <img src="../static/images/food_logo1.jpg" class="logo">
-        <a class="navbar-brand" href="#">9jaFoods</a>
+        <a class="navbar-brand" href="/">9jaFoods</a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -24,13 +24,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0" class = "nav nav-tabs nav-justified">
             <li class="nav-item">
-              <a class="hausa_foods" aria-current="page" href="#">Hausa Foods</a>
+              <a class="hausa_foods" aria-current="page" href="/hausa_foods">Hausa Foods</a>
             </li>
             <li class="nav-item">
-              <a class="yoruba_foods" id href="#">Yoruba Foods</a>
+              <a class="yoruba_foods" id href="/yoruba_foods">Yoruba Foods</a>
             </li>
             <li class="nav-item">
-              <a class="igbo_foods" href="#">Igbo Foods</a>
+              <a class="igbo_foods" href="/igbo_foods">Igbo Foods</a>
             </li>
             <li class="nav-item">
               <a id="hbnb" href="http://ubest.tech:5003/2-hbnb/"><button type="button" class="btn btn-primary">HBNB</button></a>
@@ -46,19 +46,6 @@
 	</header>
     <div class="container" style="max-width: 80%">
       <div id="intro">
-        {% for foods in igbo_foods %}
-            {% set name = igbo_foods['name'] %}
-            {% set image = igbo_foods['image'] %}
-            {% set desc = igbo_foods['description'] %}
-            <div>
-              <ul>
-                <li><h3>{{ name }}</h3></li>
-                <li><img src="{{ image }}" alt="{{ name }}" width="100"></li>
-                <li><p><a href="{{ desc }}" target="_blank">Learn More</a></p> </li>
-              </ul>
-            </div>
-        {% endfor %}
-        <p> 
           <h1>Let's Cook Yummy!</h1>
         </p>
       </div>
