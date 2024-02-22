@@ -8,8 +8,7 @@ import pandas as pd
 app = Flask(__name__)
 
 
-
-
+print(pd.__version__)
 @app.route("/", strict_slashes=False)
 def home():
     """Displays the home page of 9jafoods"""
