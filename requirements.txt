@@ -1,4 +1,4 @@
 flask==3.0.0
 gunicorn==19.7.1
-mysqldb
-sqlalchemy
+mysqldb==5.5.62-0ubuntu0.14.04.1
+sqlalchemy==2.0.23
