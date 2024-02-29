@@ -1,132 +1,124 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>9jafoods</title>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-	<!-- <link rel="stylesheet" href="static/styles/main.css"> -->
-  <link rel="stylesheet" type="text/css" href="../static/styles/main.css">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>9jafoods</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <link rel="stylesheet" href="static/styles/main.css"> -->
+    <link rel="stylesheet" type="text/css" href="../static/styles/main.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <img src="../static/images/food_logo1.jpg" class="logo" />
+          <a class="navbar-brand" href="#">9jaFoods</a>
 
-	<header>
-    
-		<nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <img src="../static/images/food_logo1.jpg" class="logo">
-        <a class="navbar-brand" href="#">9jaFoods</a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0" class = "nav nav-tabs nav-justified">
-            <li class="nav-item">
-              <a class="hausa_foods" aria-current="page" href="#">Hausa Foods</a>
-            </li>
-            <li class="nav-item">
-              <a class="yoruba_foods" id href="#">Yoruba Foods</a>
-            </li>
-            <li class="nav-item">
-              <a class="igbo_foods" href="#">Igbo Foods</a>
-            </li>
-            <li class="nav-item">
-              <a id="hbnb" href="http://ubest.tech:5003/2-hbnb/"><button type="button" class="btn btn-primary">HBNB</button></a>
-            </li>  
-          </ul>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul
+              class="navbar-nav me-auto mb-2 mb-lg-0"
+              class="nav nav-tabs nav-justified"
+            >
+              <li class="nav-item">
+                <a class="hausa_foods" aria-current="page" href="#"
+                  >Hausa Foods</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="yoruba_foods" id href="#">Yoruba Foods</a>
+              </li>
+              <li class="nav-item">
+                <a class="igbo_foods" href="/igbo_foods">Igbo Foods</a>
+              </li>
+              <li class="nav-item">
+                <a id="hbnb" href="http://ubest.tech:5003/2-hbnb/"
+                  ><button type="button" class="btn btn-primary">
+                    HBNB
+                  </button></a
+                >
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
         </div>
-      </div>
-    </nav>
-	</header>
+      </nav>
+    </header>
     <div class="container" style="max-width: 80%">
-      <div id="intro">
-        {{ recipe }}
-        <p> 
-          <h1>Let's Cook Yummy!</h1>
-        </p>
+      <div>
+        {% for foods in pop_foods %}
+        <p><b>{{ foods.Name }}</b></p>
+        <img src="{{ foods.Image }}" style="width: 455px; height: 455px;"/>
+        <!--
+          <p id="description"><a href="{{ foods.Description }}">Learn More about {{ foods.Name }}</a></p>
+          -->
+        <p>{{ foods.Description }}</p>
+        {% endfor %}
+        <p></p>
       </div>
-        <div>
-          <img src="../static/images/home.jpg" id="banner">
-        </div>
-          <div id="body_text">
-            <p>Welcome to the rich and diverse world of Nigerian cuisine, a vibrant tapestry of flavors and cultures! Nestled in the heart of Africa, Nigeria boasts vast, fertile arable land spanning countless square meters. This natural abundance has gifted us with an array of crops, giving rise to a myriad of mouthwatering delicacies that reflect our cultural heritage.
 
-            At 9jafoods, we invite you to embark on a culinary journey through the exquisite tastes of Nigeria. Our platform is meticulously designed to offer you insights into the preparation of authentic Nigerian dishes. Whether you're a seasoned chef or a kitchen novice, we've got you covered with a plethora of recipes to tantalize your taste buds.
-
-            Indulge in the unique experience of exploring the distinct cuisines from Nigeria's three major ethnic groups, each contributing its own special flavors and techniques. In addition to these categories, we've curated a selection of popular Nigerian dishes that transcend ethnic boundaries, showcasing the diverse culinary landscape of our nation.
-
-            But that's not all – our menu extends to include a delightful array of natural, healthy drinks that perfectly complement any meal of your choice. As you peruse our offerings, immerse yourself in the richness of Nigerian culinary traditions and savor the artistry of each dish.
-
-            So, whether you're here to discover new recipes, celebrate cultural diversity, or simply indulge your culinary curiosity, 9jafoods is your go-to destination. Join us on this gastronomic adventure and relish the flavors that make Nigerian cuisine truly exceptional. Utilize the search bar to quickly find a specific food item of interest instead of manually navigating through the entire list. Additionally, there's an "HBNB" button that directs you to one of my deployed and operational websites, serving as a component of my learning journey with ALX. <b>Explore, discover, and enjoy every moment!</b>
-            </p>
-            <hr>
-          </div>
-          <div class="row" style="max-width: 100%;">
-            <div id="col1">
-              <img src="../static/images/afang.jpg" style="width: 350px; height: 350px;">
-              <figcaption style="text-align: center;">Popular Nigerian Foods</figcaption>
-              <p class="features" style="max-width: 350px">Discover and acquire the skills to prepare well-known Nigerian dishes that transcend the boundaries of the three major ethnic groups, including Afan, Edikang Ikong, and more.
-              </p>
-            </div>
-            <div id="col2" style="max-width: 350px">
-              <img src="../static/images/kunun_aya.png" style="width: 350px; height: 350px;">
-              <figcaption style="text-align: center; padding-left: 10px;">Healthy Nigerian Drinks</figcaption>
-              <p class="features" style="max-width: 350px">Presented here are a variety of wholesome Nigerian beverages that can be effortlessly crafted in the comfort of your home. Enjoy them on their own or pair them with your preferred culinary delights.
-              </p>
-            </div>
-          </div>
-          <hr>
-          <div id="about">
-            <h2 style="text-align: center;">About</h2>
-            <p>This is a portfolio project for Holberton School done by Agi Ukanyohe Israel. The purpose of this choice of project stems from the fact that it’s quite a daunting task always asking myself of what to eat, how to prepare it, promote and preserve it for the unborn generation. This project is designed for those who are adventurous enough and willing to try their hands on some Nigerian delicacies. If you are just a visitor and would like to prepare some Nigerian delicious meals then we’ve got you covered. This project will also serve the following purpose
-              <ul>
-                <li>Recipe Repository:</li>
-                  <p>Provide a comprehensive collection of Nigerian recipes, offering a diverse range of dishes from various regions, including traditional, modern, and fusion recipes.
-                  </p>
-                <li>Cultural Preservation:></li>
-                  <p>Contribute to the preservation and documentation of Nigerian culinary traditions, ensuring that traditional cooking methods, ingredients, and cultural practices are not lost over time.
-                  </p>
-                <li>Cooking Tips and Techniques:</li>
-                  <p>Offer cooking tips, techniques, and tutorials to help users, especially those new to Nigerian cuisine, master the art of preparing Nigerian dishes.
-                  </p>
-                <li>Mobile Accessibility:</li>
-                  <p>
-                    Ensure the website is mobile-friendly, making it easy for users to access recipes and cooking information from their smartphones and tablets.
-                  In nutshell 9JAFoods could serve as a valuable resource for anyone interested in Nigerian cuisine, from beginners to experienced cooks, contributing to the appreciation and preservation of the country's rich culinary heritage.
-                  </p>
-                <li>Health and Nutrition:</li>
-                  <p>
-                    Provide information on the health benefits of traditional Nigerian ingredients and dishes, promoting a balanced and nutritious diet.
-                  </p>
-                  <p><a href="https://github.com/khan2626/9jafoods">Click here to visit the project's repository on github</a></p>
-              </ul>
-            </p>
-          </div>
-          <hr>
-          <div id="connect">
-            <h4>Connect with me</h4>
-            <p><a href="https://github.com/khan2626">Github</a></p>
-            <p><a href="https://www.linkedin.com/in/israel-agi-a02167267/">Linkedln</a></p>
-            <p><a href="https://twitter.com/IsraelK13151205">X</a></p>  
-          </div>
-          
+      <div id="connect">
+        <h4>Connect with me</h4>
+        <p><a href="https://github.com/khan2626">Github</a></p>
+        <p>
+          <a href="https://www.linkedin.com/in/israel-agi-a02167267/"
+            >Linkedln</a
+          >
+        </p>
+        <p><a href="https://twitter.com/IsraelK13151205">X</a></p>
+      </div>
     </div>
-  <footer class="py-3 my-4">
-    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Comments</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Contact Us</a></li>
-    </ul>
+    <footer class="py-3 my-4" style="position: relative; bottom: 0">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item">
+          <a href="#" class="nav-link px-2 text-muted">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link px-2 text-muted">About</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link px-2 text-muted">Comments</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link px-2 text-muted">FAQs</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link px-2 text-muted">Contact Us</a>
+        </li>
+      </ul>
 
-    <p class="text-center text-muted">© 2024 Company, Inc</p>
-  </footer>
-</body>
+      <p class="text-center text-muted">© 2024 Company, Inc</p>
+    </footer>
+  </body>
 </html>

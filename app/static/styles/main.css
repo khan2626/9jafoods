@@ -73,3 +73,6 @@ footer .ul .nav-item a{
     width: 450px;
     text-align: center;
 }
+p{
+    line-height: 2;
+}
