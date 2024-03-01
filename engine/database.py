@@ -4,7 +4,7 @@ from sqlalchemy import create_engine, text
 import os 
 
 
-engine = create_engine(os.environ.get(conn_string))
+engine = create_engine(os.environ.get("conn_string"))
 
 def load_Igbo_Foods():
     """It loads Igbo foods list from database"""
